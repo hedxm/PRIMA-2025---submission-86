@@ -1,0 +1,16 @@
+
+{
+  "name": "triplet_extractor",
+  "role": "Triplet Extractor",
+  "llm": "llama3:instruct",
+  "prompt_path": "prompts/triplet_extractor.txt",
+  "tool": "read_pdf_chunked", 
+  "tool_params": {                          
+    "path": "files/safety-first-for-automated-driving.pdf",
+    "chunk_size": 1200,
+    "chunk_overlap": 300
+  },
+  "output_path": "outputs/triplet_extractor/all_inferred_relations.json",
+  "output_dir": "outputs/triplet_extractor", 
+  "log_dir": "outputs/triplet_extractor/logs" 
+}

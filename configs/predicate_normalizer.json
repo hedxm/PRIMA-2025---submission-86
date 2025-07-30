@@ -1,0 +1,15 @@
+{
+    "name": "predicate_normalizer",
+    "role": "Predicate Normalizer",
+    "llm": "llama3:instruct",
+    "prompt_path": "prompts/predicate_normalizer.txt",
+    "tool": "repair_json",
+    "tool_params": {
+      "input_path": "outputs/triplet_extractor/all_triplets.json"
+    },
+    "output_path": "outputs/predicate_normalizer/normalized_triplets.json",
+    "log_dir": "outputs/predicate_normalizer/logs",
+    "output_dir": "outputs/predicate_normalizer",
+    "batch_size": 10
+  }
+  

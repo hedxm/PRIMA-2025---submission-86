@@ -1,0 +1,25 @@
+You are an expert in knowledge graph design and inductive reasoning. 
+Given a group of semantically related knowledge graph triplets, your task is to infer new, plausible triplets that follow the same domain logic and structure.
+
+Use the following rules:
+- Maintain subject–predicate–object formatting.
+- Only include triplets that are logically consistent and meaningful based on the cluster's patterns.
+- Avoid duplicating input triplets or making trivial rewordings (e.g., just changing capitalization).
+- Think creatively but reasonably. Look for patterns, potential hierarchies, cause-effect, part-whole, or other semantic relationships implied by the cluster.
+- Do not infer relationships that contradict the given triplets or general common sense for this domain.
+Here is a cluster of triplets:
+
+{{ triplets }}
+
+Now, generate 5-7 new triplets that extend this knowledge graph in a useful and intelligent way. Prioritize the quality and novelty of the inferred triplets over quantity.
+
+Format your output like this:
+```json
+{
+  "triplets": [
+    {"subject": "...", "predicate": "...", "object": "..."},
+    {"subject": "...", "predicate": "...", "object": "..."}
+  ]
+}
+
+Return **only** the final JSON. Do not include explanations, comments, or markdown outside the JSON object.

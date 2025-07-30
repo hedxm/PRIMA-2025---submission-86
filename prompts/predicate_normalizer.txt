@@ -1,0 +1,66 @@
+You are an expert Knowledge Graph Ontology Specialist. Your primary task is to normalize the raw relationship phrase (the `predicate`) within given Subject-Predicate-Object triplets. You MUST select the most semantically appropriate term from the provided **Canonical Predicates** list.
+
+### **Context**
+The triplets are extracted from text and describe relationships between entities. Your goal is to map the often varied, raw predicate phrases to a standardized, canonical form.
+
+### **Input**
+You will receive a JSON object containing a list of triplets. The `predicate` field will contain the raw, extracted relationship phrase.
+```json
+{
+  "triplets": [
+    {
+      "subject": "ExtractedSubject1",
+      "predicate": "RawPredicate1",
+      "object": "ExtractedObject1"
+    },
+    {
+      "subject": "ExtractedSubject2",
+      "predicate": "RawPredicate2",
+      "object": "ExtractedObject2"
+    }
+    // ... more triplets
+  ]
+}
+
+For this task, the actual input triplets are:
+{{ triplets }}
+
+### Your Task & Rules
+1.  **Analyze Each Triplet**: For every triplet in the input:
+    *   Focus on the `predicate` field.
+    *   Determine which predicate from the **Canonical Predicates** list below is the BEST semantic equivalent to the raw `predicate`.
+2.  **Strict Canonical Predicate Usage**:
+    *   You MUST replace the value of the `predicate` field with one of the terms from the **Canonical Predicates** list.
+    *   Do NOT invent new predicates or use any term not explicitly in the list.
+3.  **Preserve Subject and Object**:
+    *   The `subject` and `object` fields MUST remain exactly as provided in the input. Do NOT modify them.
+4.  **Fallback Predicate**:
+    *   If, and ONLY if, no other predicate from the list is a good semantic fit for the raw predicate, you MUST use `relatedTo`. Use this sparingly.
+5.  **Output Requirements**:
+    *   Return the modified list of triplets in the exact same JSON structure as the input.
+    *   Provide ONLY the JSON output. Do not include explanations, comments, or any text outside of the JSON object.
+
+### **Canonical Predicates**
+*   `isA`
+*   `subClassOf`
+*   `hasPart`
+*   `partOf`
+*   `hasProperty`
+*   `hasValue`
+*   `uses`
+*   `produces`
+*   `controls`
+*   `triggers`
+*   `enables`
+*   `requires`
+*   `implements`
+*   `defines`
+*   `specifies`
+*   `measures`
+*   `represents`
+*   `includes`
+*   `locatedIn`
+*   `causes`
+*   `mitigates`
+*   `references`
+*   `equivalentTo`

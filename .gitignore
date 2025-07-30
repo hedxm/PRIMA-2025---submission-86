@@ -1,0 +1,12 @@
+# Ignore generated output files
+/outputs/
+
+# Ignore large data files
+/data/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore the virtual environment
+venv/

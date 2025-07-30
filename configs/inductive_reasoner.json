@@ -1,0 +1,15 @@
+{
+    "name": "inductive_reasoner",
+    "role": "Inductive Reasoning Agent",
+    "llm": "llama3:instruct",
+    "prompt_path": "prompts/inductive_reasoner.txt",
+    "tool": "repair_json",
+    "tool_params": {
+      "input_path": "outputs/commonsense_verifier/verified_triplets.json"
+    },
+    "embedding_model": "all-MiniLM-L6-v2", 
+    "output_dir": "outputs/inductive_reasoner",
+    "log_dir": "outputs/inductive_reasoner/logs",
+    "max_clusters": 7
+  }
+  

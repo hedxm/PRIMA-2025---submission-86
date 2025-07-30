@@ -1,0 +1,33 @@
+{
+    "name": "kg_curator",
+    "role": "Knowledge Graph Curator",
+    "llm": "llama3:instruct", 
+    "embedding_model": "all-MiniLM-L6-v2",
+
+    "labeler_prompt_path": "prompts/kg_curator.txt",
+    "target_kg_labels": [ 
+        "System","Sensor", "Actuator", "Controller", "Module", 
+        "Software", "SoftwareArchitecture", "Communication", "Signal", "Property", 
+        "VehicleProperty", "User", "Driver", "Passenger", "Actor", 
+        "TrafficParticipant", "Pedestrian", "Environment",
+        "Weather", "Behavior", "Maneuver", "Intention", "Scene", "ScenarioElement", 
+        "Frame", "Hazard", "Risk", "Fault", "Failure", "Goal", "SafetyGoal", 
+        "FunctionalGoal", "Mitigation", "SafetyMechanism", "SafetyArgument", 
+        "FaultResponse", "Test", "TestProcedure", "TestCase", "Standard", "Regulation", 
+        "Requirement", "Information", "Data", "OperationalDesignDomain", 
+        "Condition", "Process", "Validation", "Verification", "Capability", "Vehicle",
+         "Feature", "Hardware"
+    ],
+    "default_label": "Review",
+
+    "neo4j_entity_embeddings_path": "outputs/triplet_matcher/embeddings/neo4j_entity_embeddings.npy",
+    "neo4j_entity_text_path": "outputs/triplet_matcher/embeddings/neo4j_entity_text.json",
+    "neo4j_relation_embeddings_path": "outputs/triplet_matcher/embeddings/neo4j_relation_embeddings.npy",
+    "neo4j_relation_text_path": "outputs/triplet_matcher/embeddings/neo4j_relation_text.json",
+    
+    "output_dir": "outputs/kg_curator",
+    "llm_log_dir": "outputs/kg_curator/llm_logs", 
+    "matcher_log_dir": "outputs/kg_curator/matcher_logs", 
+    "similarity_threshold": 0.75, 
+    "batch_size": 10
+}

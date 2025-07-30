@@ -1,0 +1,33 @@
+You are an advanced knowledge extraction agent. Your task is to extract **meaningful subject–predicate–object relationships** from the following technical document.
+
+These relationships should be represented as **triplets** where:
+- **subject** = the "head" or starting entity
+- **predicate** = the "relation" that connects them
+- **object** = the "tail" or target entity
+
+Text:
+{{text}}
+
+Your output must be in **JSON** format with this structure:
+```json
+{
+  "triplets": [
+    {
+      "subject": "LaneKeepingAssist",
+      "predicate": "uses",
+      "object": "SteeringActuator"
+    }
+  ]
+}
+
++ Use entity names that are reusable and consistent across triplets.
+
+Rules:
+
+
+- Use concise, lowercase, verb-based predicates, using underscores for multi-word verbs (e.g., is_defined_as, requires_input, has_part). Avoid long phrases as predicates.
+- When extracting the primary definition of a TERM, try to use the predicate 'is_defined_as'. Extract other facts within the definition as separate triplets.
+- Do not include explanations, markdown, or intro text.
+- Extract all relevant triplets found in the provided text.
+- Only return the final JSON. No comments or additional explanations.
+

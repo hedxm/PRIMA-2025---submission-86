@@ -1,0 +1,32 @@
+{
+    "neo4j": {
+        "uri": "",
+        "user": "neo4j",
+        "password": "",
+        "output_path": "outputs/neo4j/triplets_export.csv",
+        "entities_output_path": "outputs/neo4j/entities_export.csv",
+        "relations_output_path": "outputs/neo4j/relations_export.csv"
+    },
+    "embeddings": {
+        "triplet_csv_path": "outputs/neo4j/triplets_export.csv",
+        "triplet_emb_output_path": "outputs/triplet_matcher/embeddings/neo4j_triplet_embeddings.npy",
+        "triplet_text_output_path": "outputs/triplet_matcher/embeddings/neo4j_triplet_text.json",
+        
+        "entities_csv_path": "outputs/neo4j/entities_export.csv",
+        "entity_emb_output_path": "outputs/triplet_matcher/embeddings/neo4j_entity_embeddings.npy",
+        "entity_text_output_path": "outputs/triplet_matcher/embeddings/neo4j_entity_text.json",
+
+        "relations_csv_path": "outputs/neo4j/relations_export.csv",
+        "relation_emb_output_path": "outputs/triplet_matcher/embeddings/neo4j_relation_embeddings.npy",
+        "relation_text_output_path": "outputs/triplet_matcher/embeddings/neo4j_relation_text.json",
+        
+        "model_name": "all-MiniLM-L6-v2"
+    },
+    "matcher": {
+        "triplet_file": "outputs/commonsense_verifier/final_verified_triplets.json",
+        "embeddings_dir": "outputs/triplet_matcher/embeddings/", 
+        "threshold": 0.7,
+        "batch_size": 10,
+        "output_dir": "outputs/triplet_matcher"
+    }
+}

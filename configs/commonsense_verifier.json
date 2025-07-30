@@ -1,0 +1,9 @@
+{
+    "tool_params": {
+        "input_path": "outputs/predicate_normalizer/predicate_normalizer.json",
+        "emb_path": "data/numberbatch-en-19.08.txt",
+        "output_dir": "outputs/commonsense_verifier",
+        "threshold_nb": 0.2,
+        "threshold_e5": 0.75
+    }
+}
