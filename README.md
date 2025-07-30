@@ -54,7 +54,7 @@ This step is critical as it loads the required foundational ontology.
 
 Note: This file can also be used on Neo4j Aura Database (cloud based).
 
-1.  Go to the [Neo4j Aura](https://neo4j.com/cloud/aura-graph-database/) website and create a new **Free** instance.
+1.  Go to the [Neo4j Aura]([https://neo4j.com/cloud/aura-graph-database/](https://console.neo4j.io/)) website and create a new **Free** instance.
 2.  Once your instance is active, open the **Neo4j Browser** for that instance.
 3. Once the instance is created, click the "..." menu next to it and select **Backup & restore**.
 4. In the restore dialog, select the **From dump** option and browse to the `initial_schema.backup` file included in this archive.
