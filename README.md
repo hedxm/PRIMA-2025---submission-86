@@ -14,7 +14,7 @@ This archive contains the complete source code and required files. This guide pr
 *   `/outputs`: Contains the outputs of each component of the pipeline, inside of the LLM agents outputs there is also a folder containing the logs.
 *   `main.py`: The main script to execute the pipeline.
 *   `requirements.txt`: A list of the required Python dependencies.
-*   `README.txt`: This instruction file.
+*   `README.md`: This instruction file.
 
 
 ## Setup Instructions
