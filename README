@@ -6,7 +6,7 @@ This archive contains the complete source code and required files. This guide pr
 
 *   `/agents`: Core Python logic for each LLM agent.
 *   `/configs`: All JSON configuration files for the system.
-*   `/data`: Contains the pre-downloaded Numberbatch embeddings file.
+*   `/data`: Contains a placeholder for the Numberbatch embeddings file.
 *   `/files`: Contains the source PDF documents used for the case study.
 *   `/prompts`: Contains the prompt templates used by the LLM agents.
 *   `/utils` & `/tools`: Various utility and helper functions.
@@ -26,6 +26,17 @@ Please follow these steps in order to run the project.
 *   Python 3.9+
 *   Neo4j Desktop
 *   Ollama
+*   **Numberbatch Embeddings**: This project requires a large data file containing commonsense knowledge vectors. This file is used by the `Commonsense Verifier` module to check if an extracted fact is plausible.
+
+**Note:** Due to its very large size (over 3 GB), this file is not included in the repository and must be downloaded manually.
+
+**Instructions to get the file:**
+
+1.  **Download:** Go to the official [ConceptNet Downloads page](https://conceptnet.io/downloads).
+2.  **Select the Correct File:** Find and download the English embeddings. The exact filename you need is **`numberbatch-en-19.08.txt`**.
+3.  **Place the File:** After downloading, move the `numberbatch-en-19.08.txt` file into the `/data` directory within the main project folder.
+
+Once this is done, you can proceed with the setup steps below.
 
 ### Step 1: Set up the Neo4j Database
 
@@ -37,7 +48,7 @@ This step is critical as it loads the required foundational ontology.
 4.  Once the DBMS is created, click the "..." menu next to it and select **Administration**.
 5.  Navigate to the **Backup** tab.
 6.  Click the **Restore** button.
-7.  In the restore dialog, select the **From dump** option and browse to the `initial_schema.backup` file included in this archive.
+7.  In the restore dialog, select the **From dump** option and browse to the `initial_schema.backup` file from the cloned repository.
 8.  Complete the restore process.
 9.  **Start** the database. Your Neo4j instance is now ready.
 
@@ -50,15 +61,23 @@ Note: This file can also be used on Neo4j Aura Database (cloud based).
 8.  Complete the restore process.
 9.  **Start** the database. Your Neo4j instance is now ready.
 
-### Step 2: Set up the Python Environment
+### Step 2: Clone the Repository and Set up the Environment
 
-1.  Unzip this project archive and open a terminal or command prompt in the main project folder.
-2.  Create and activate a Python virtual environment:
+1.  Open a terminal or command prompt.
+2.  Clone the repository from GitHub:
+    ```sh
+    git clone https://github.com/hedxm/PRIMA-2025---submission-86.git
+    ```
+3.  Navigate into the newly created project folder:
+    ```sh
+    cd PRIMA-2025---submission-86
+    ```
+4.  Create and activate a Python virtual environment:
     ```sh
     python -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
-3.  Install all required Python dependencies:
+5.  Install all required Python dependencies:
     ```sh
     pip install -r requirements.txt
     ```
